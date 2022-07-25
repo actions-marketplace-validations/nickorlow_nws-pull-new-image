@@ -1,0 +1,12 @@
+name: 'NWS Pull New Image'
+description: 'Gets NWS to pull the latest image from your repo'
+inputs:
+  deploy-key: 
+    description: 'Your NWS Deploy Key'
+    required: true
+  application-id:  
+    description: 'The application id to get a new image for'
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'
