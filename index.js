@@ -2,8 +2,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-  const applicationId = core.getInput('who-to-greet');
-  const deployKey = core.getInput('who-to-greet');
+  const applicationId = core.getInput('application-id');
+  const deployKey = core.getInput('deploy-key');
   console.log(`ApplicationId ${applicationId}!`);
   console.log(`DeployKey ${deployKey}!`);
 
