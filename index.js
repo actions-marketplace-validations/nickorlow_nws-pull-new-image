@@ -10,18 +10,13 @@ try {
   console.log(`DeployKey ${deployKey}!`);
 
   axios
-  .put('https://api-nws.nickorlow.com', {"serviceId": applicationId, "deployKey": deployKey})
+  .put('https://api-nws.nickorlow.com/service/update', {"serviceId": applicationId, "deployKey": deployKey})
   .then(res => {
-    console.log(`statusCode: ${res.status}`);
-    console.log(res);
+    console.log(`Update Starting via NWS..`);
   })
   .catch(error => {
-    console.error(error);
+    core.setFailed(error);
   });
-
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
 }
