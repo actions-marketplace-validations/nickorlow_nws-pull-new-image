@@ -10,7 +10,7 @@ try {
   console.log(`DeployKey ${deployKey}!`);
 
   axios
-  .put('https://api-nws.nickorlow.com', {"serviceId": serviceId, "deployKey": deployKey})
+  .put('https://api-nws.nickorlow.com', {"serviceId": applicationId, "deployKey": deployKey})
   .then(res => {
     console.log(`statusCode: ${res.status}`);
     console.log(res);
