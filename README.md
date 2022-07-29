@@ -4,16 +4,16 @@ Gets the NWS network to pull a new version of the docker image used to host your
 
 ## How to Use
 
-### 1. Get NWS Credentials
+### 1. Dockerize your Application
+Since NWS uses Kubernetes, it is necessary to dockerize your application (other container formats like containerd haven't been tested with NWS). Doing this will vary on your application although it is easy to find templates via google.
+
+### 2. Create a GitHub Actions Pipeline to Build your Application
+You can find an example GitHub Acitons script [here](https://github.com/nickorlow/docker-helloworld-http/blob/master/.github/workflows/docker-publish.yml). 
+
+### 3. Get NWS Credentials
 In order to deploy to NWS, you need to get credentials. Currently, NWS is invite-only and to get credentials, you need to recieve an invitation. 
 
 When you do get credentials, you will recieve the following two keys: an applicationId and a deploymentKey.
-
-### 2. Dockerize your Application
-Since NWS uses Kubernetes, it is necessary to dockerize your application (other container formats like containerd haven't been tested with NWS). Doing this will vary on your application although it is easy to find templates via google.
-
-### 3. Create a GitHub Actions Pipeline to Build your Application
-You can find an example GitHub Acitons script [here](https://github.com/nickorlow/docker-helloworld-http/blob/master/.github/workflows/docker-publish.yml). 
 
 #### 4. Add NWS Credentials to GitHub
 First, you need to add this to your github actions file (if you haven't already):
